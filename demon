@@ -1,0 +1,88 @@
+#!/bin/bash
+
+ULIMIT_MAX_FILES=""
+#
+MY_HTTPD_CONFIG="/Users/ramos/.config/apache2/conf/httpd.conf"
+MY_DNSMASQ_CONFIG="/Users/ramos/.config/etc/dnsmasq.conf"
+DNSMASQ_PID="/opt/local/var/run/dnsmasq/dnsmasq.pid"
+
+
+if [[ $UID != 0 ]]; then
+    echo "Please run this script with sudo:"
+    echo "sudo $0 $*"
+    exit 1
+fi
+
+
+# before starting, make sure dnsmasq already running
+
+MASQ ()
+{
+  if [ ! -r "${DNSMASQ_PID}" ]; then
+    /opt/local/sbin/dnsmasq -k -C "${MY_DNSMASQ_CONFIG}" &
+  fi
+}
+
+# Start
+#
+Start()
+{
+  MASQ
+	[ -x /opt/local/apache2/bin/httpd ] && /opt/local/apache2/bin/httpd -k start -f "${MY_HTTPD_CONFIG}" > /dev/null
+}
+
+#
+# Stop
+#
+Stop()
+{
+	if [ -r /opt/local/apache2/logs/httpd.pid ]; then
+    /opt/local/apache2/bin/apachectl -f "${MY_HTTPD_CONFIG}" -k stop > /dev/null
+  else
+    echo "$0: No active process found."
+  fi
+
+  if [ -r "${DNSMASQ_PID}" ]; then
+    pkill dnsmasq
+  fi
+}
+
+Restart()
+{
+	/opt/local/apache2/bin/apachectl -f "${MY_HTTPD_CONFIG}" -k restart > /dev/null
+}
+
+Test()
+{
+  /opt/local/apache2/bin/apachectl -f "${MY_HTTPD_CONFIG}" -t
+}
+
+# #
+# # Run
+# #
+Run()
+{
+case $1 in
+  start  ) Start   ;;
+  stop   ) Stop    ;;
+  restart) Restart ;;
+  test   ) Test    ;;
+  *      ) echo "Unknown option: try 'Start', 'Stop', 'Restart'";;
+esac
+}
+
+### some prep stuff
+
+/bin/launchctl \
+  unload -w \
+  /System/Library/LaunchDaemons/org.apache.httpd.plist &> /dev/null
+
+
+
+
+#
+# Run a phase based on the selector
+#DNS
+Run $1
+
+# watch 'pgrep dnsmasq | wc -l ; pgrep httpd | wc -l'

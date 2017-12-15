@@ -1,0 +1,36 @@
+#!/opt/local/bin/bash
+
+getcwd () {
+  while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+    DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+    SOURCE="$(readlink "$SOURCE")"
+    [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+  done
+  _CWD="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  _RC="${_CWD}/.demorc"
+}
+getcwd
+
+
+rccheck () {
+  if [[ -f "${_RC}" ]]; then
+    printf "Configuration file found.\n"
+    source "${_RC}"
+  else
+    printf "Configuration file not found.\n"
+    exit 1
+  fi
+}
+rccheck
+
+demosite () {
+
+  browser-sync start \
+               --proxy "${DEMOSITE}" \
+               --online --tunnel --host "${DEMOHOST}" \
+               --open tunnel \
+               --logLevel info \
+               --no-ui --no-ghost-mode --no-inject-changes
+
+}
+demosite

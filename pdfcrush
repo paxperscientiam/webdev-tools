@@ -1,0 +1,13 @@
+#!/opt/local/bin/bash
+
+crush () {
+  input="${1}"
+  output="${input%.*}-optimized.pdf"
+
+  gs -sDEVICE=pdfwrite \
+     -dDetectDuplicateImages=true \
+     -sOutputFile="${output}" \
+     -dNOPAUSE -dBATCH "${input}"
+}
+
+crush "$@"

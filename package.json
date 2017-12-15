@@ -1,0 +1,67 @@
+{
+  "name": "dev-server",
+  "version": "0.6.0",
+  "description": "BrowserSync + node-sass + postcss = webdev-proxy-server",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/paxperscientiam/webdev-proxy-server.git"
+  },
+  "author": "Chris <chrisdavidramos@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/paxperscientiam/webdev-proxy-server/issues"
+  },
+  "homepage": "https://github.com/paxperscientiam/webdev-proxy-server#readme",
+  "devDependencies": {
+    "autoprefixer": "~7.1.2",
+    "browser-sync": "~2.18.11",
+    "cache-require-paths": "^0.3.0",
+    "concat": "^3.0.0",
+    "cssnano": "4.0.0-rc.0",
+    "es6-promise": "~4.1.1",
+    "lodash": "^4.17.4",
+    "node-sass": "^4.5.0",
+    "postcss": "^6.0.6",
+    "postcss-colorblind": "^1.0.0",
+    "postcss-fixes": "^2.0.1",
+    "postcss-flexboxfixer": "^0.0.5",
+    "postcss-flexbugs-fixes": "^3.0.0",
+    "postcss-flexibility": "^2.0.0",
+    "postcss-font-magician": "^2.0.0",
+    "postcss-import": "^10.0.0",
+    "postcss-unprefix": "^2.1.1",
+    "root-require": "^0.3.1",
+    "terminal-kit": "^1.11.1",
+    "try-require": "^1.2.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 3 versions",
+    "Safari >= 8",
+    "Android >= 2.3",
+    "ie >= 9",
+    "ios >= 7",
+    "ff >= 49"
+  ],
+  "dependencies": {
+    "babili-webpack-plugin": "^0.1.2",
+    "css-loader": "^0.28.4",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "imports-loader": "^0.7.1",
+    "memory-fs": "^0.4.1",
+    "postcss-clean": "^1.0.3",
+    "postcss-devtools": "^1.1.1",
+    "script-loader": "^0.7.0",
+    "style-loader": "^0.18.2",
+    "stylelint": "^7.13.0",
+    "uglify-js": "^3.0.24",
+    "uglifyjs-webpack-plugin": "^0.4.6",
+    "webpack": "^3.3.0",
+    "webpack-build-notifier": "^0.1.16"
+  }
+}

@@ -1,0 +1,31 @@
+#!/opt/local/bin/bash
+
+
+logmein () {
+  if [[ -f "${_RC}" ]]; then
+    printf "Creds file found.\n"
+    source "${_RC}"
+    if [[ ! -z "${user}" ]]; then
+      ssh "${user}"@"${domain}"
+      return 0
+    fi
+  else
+    printf "Creds file not found."
+    return 1
+  fi
+}
+
+getcwd () {
+  while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+    DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+    SOURCE="$(readlink "$SOURCE")"
+    [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file was located
+  done
+  _CWD="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  _RC="${_CWD}/creds.txt"
+}
+
+
+
+getcwd
+logmein "${@}"

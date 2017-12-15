@@ -1,0 +1,9 @@
+#!/opt/local/bin/bash
+
+warm () {
+  url="${1}"
+
+  wget -R css,js -nd -r -l 2 -e robots=off --delete-after "${url}"
+}
+
+warm "$@"

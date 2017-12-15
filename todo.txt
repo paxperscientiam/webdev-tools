@@ -1,0 +1,1 @@
+should offer sub rsync for files outsite of project root

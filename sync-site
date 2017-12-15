@@ -1,0 +1,96 @@
+#!/opt/local/bin/bash
+
+#reset/define
+sshuser=
+localroot=
+remoteroot=
+domain=
+sources=
+
+BLACKLIST=
+PROTECTLIST=
+
+getcwd () {
+  while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symlink
+    DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+    SOURCE="$(readlink "$SOURCE")"
+    [[ $SOURCE != /* ]] && SOURCE="$DIR/$SOURCE" # if $SOURCE was a relative symlink, we need to resolve it relative to the path where the symlink file wa
+
+    s located
+  done
+  _CWD="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
+  _RC="${_CWD}/creds.txt"
+}
+getcwd
+
+logmein () {
+  if [[ -f "${_RC}" ]]; then
+    printf "Creds file found.\n"
+    source "${_RC}"
+  else
+    printf "Creds file not found.\n"
+    exit 1
+  fi
+}
+logmein
+
+
+arr=($sshuser $localroot $remoteroot $domain)
+for i in "${arr[@]}"
+do
+  if [[ ! -n "${i}" ]]; then
+    printf 'Please be sure to set something.\n'
+  fi
+done
+
+
+function sync () {
+  target="${sshuser}@${domain}:${remoteroot}"
+
+  # if [ "${#sources[*]}" -eq 0 ];then
+  #   printf 'rsync source (`sources` variable) not defined...exiting\n'
+  #   exit 1
+  # fi
+  rsync -e '/usr/bin/ssh -T -x' \
+        $* \
+        --compress \
+        --protect-args \
+        --prune-empty-dirs \
+        --delete \
+        --exclude-from <(printf '%s\n' "${BLACKLIST[@]}") \
+        --filter='merge '<(printf '%s\n' "${PROTECTLIST[@]}") \
+        --delete-excluded \
+        --archive \
+        --progress \
+        --times \
+        --copy-links \
+        --verbose \
+        --include-from <(printf '%s\n' "${sources[@]}") \
+        "${localroot}" \
+        "${target}"
+}
+#  --files-from <(printf '%s\n' "${sources[@]}") \
+
+# need to update to use correct php version (dynamic?)
+# need to pass correct file permissions
+
+resetRemotePHPCGI () {
+  # reset PHP
+/usr/bin/ssh -Tx "${sshuser}"@"${domain}" "killall -9 ${1}"
+}
+
+optimizeComposerAutoloader () {
+  composer dumpautoload -o
+}
+
+if [ -v OPTIMIZE_COMPOSER -a ! ${#OPTIMIZE_COMPOSER} -eq 0 ];then
+  printf "Optimizing composer autoloader...\n"
+  composer dumpautoload -o
+fi
+
+
+sync "$@"
+
+if [ -v PHPCGI -a ! ${#PHPCGI} -eq 0 ]; then
+  resetRemotePHPCGI "${PHPCGI}"
+fi

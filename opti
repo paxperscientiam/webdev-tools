@@ -1,0 +1,3 @@
+#!/opt/local/bin/bash
+
+find . -type f -print0 | xargs -0 optipng -strip all -o2 -f5 -i1

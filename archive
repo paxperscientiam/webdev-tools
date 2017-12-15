@@ -1,0 +1,42 @@
+#!/opt/local/bin/bash
+source="${HOME}/.config/apache2/htdocs/www"
+target="${HOME}/Dropbox/webbackup/"
+#
+
+function sync () {
+
+  rsync -e '/usr/bin/ssh -T -x' \
+        --compress \
+        --protect-args \
+        --prune-empty-dirs \
+        --delete \
+        --exclude-from <(printf '%s\n' "${BLACKLIST[@]}") \
+        --filter='merge '<(printf '%s\n' "${PROTECTLIST[@]}") \
+        --delete-excluded \
+        --archive \
+        --links \
+        --progress \
+        --times \
+        --verbose \
+        "${source}" "${HOME}"/.ssh "${HOME}"/.gnupg/   "${target}"
+}
+
+#        --copy-links converts to referent and removes symlink
+
+BLACKLIST=(
+  ".DS_Store"
+  "*#*"
+  "*~"
+  "GitProjects"
+  ".debris"
+  "openseadragon"
+  "vendor"
+  "node_modules"
+  "composer"
+  "bower_components"
+)
+
+PROTECTLIST=(
+)
+
+sync

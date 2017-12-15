@@ -1,0 +1,45 @@
+#!/opt/local/bin/bash
+
+convert () {
+  n=$#
+  inputPDF="${!n}"
+
+  externalDir="${inputPDF%.*}"
+  externalDir="${externalDir// /}"
+  externalDir="${externalDir//_/}"
+  externalDir="${externalDir//-/}"
+
+  TMPDIR=$(command mktemp -dq)
+
+
+  if [ ! -d "${externalDir}" ];then
+    printf 'Creating destination directory...'
+    command mkdir "${externalDir}"
+    printf 'done.\n'
+  fi
+  #
+  if [ -d "${externalDir}" ];then
+    printf 'Cleaning destination directory...'
+    command mv "${externalDir}" "${TMPDIR}"
+    printf 'done.\n'
+  fi
+
+
+
+  pdf2htmlEX --debug=0 \
+	           --no-drm=1 \
+             --tounicode -1 \
+	           --fit-width=1200 \
+	           --printing=0 \
+	           --split-pages=1 \
+	           --page-filename='webbook-%03d.html' \
+	           --embed CFIJO \
+	           --external-hint-tool=ttfautohint \
+       	     --auto-hint=1 \
+             "${@:1:$#-1}" \
+	           --dest-dir "${externalDir}" \
+	           "${inputPDF}" \
+             "index.html"
+}
+
+convert "$@"
