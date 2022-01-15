@@ -24,7 +24,7 @@
     "concat": "^3.0.0",
     "cssnano": "4.0.0-rc.0",
     "es6-promise": "~4.1.1",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.21",
     "node-sass": "^4.5.0",
     "postcss": "^6.0.6",
     "postcss-colorblind": "^1.0.0",
