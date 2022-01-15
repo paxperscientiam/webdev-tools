@@ -26,7 +26,7 @@
     "es6-promise": "~4.1.1",
     "lodash": "^4.17.21",
     "node-sass": "^4.5.0",
-    "postcss": "^6.0.6",
+    "postcss": "^8.2.13",
     "postcss-colorblind": "^1.0.0",
     "postcss-fixes": "^2.0.1",
     "postcss-flexboxfixer": "^0.0.5",
