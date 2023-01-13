@@ -36,7 +36,7 @@
     "postcss-import": "^10.0.0",
     "postcss-unprefix": "^2.1.1",
     "root-require": "^0.3.1",
-    "terminal-kit": "^1.11.1",
+    "terminal-kit": "^2.1.8",
     "try-require": "^1.2.1"
   },
   "browserslist": [

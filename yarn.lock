@@ -2,6 +2,17 @@
 # yarn lockfile v1
 
 
+"@cronvel/get-pixels@^3.4.0":
+  version "3.4.1"
+  resolved "https://registry.yarnpkg.com/@cronvel/get-pixels/-/get-pixels-3.4.1.tgz#6028de81152e73870ebec0c254f6b727afbd9a34"
+  dependencies:
+    jpeg-js "^0.4.4"
+    ndarray "^1.0.19"
+    ndarray-pack "^1.1.1"
+    node-bitmap "0.0.1"
+    omggif "^1.0.10"
+    pngjs "^6.0.0"
+
 JSONStream@^0.8.4:
   version "0.8.4"
   resolved "https://registry.yarnpkg.com/JSONStream/-/JSONStream-0.8.4.tgz#91657dfe6ff857483066132b4618b62e8f4887bd"
@@ -201,13 +212,6 @@ async-each@^1.0.0:
 async-foreach@^0.1.3:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/async-foreach/-/async-foreach-0.1.3.tgz#36121f845c0578172de419a97dbeb1d16ec34542"
-
-async-kit@^2.2.3:
-  version "2.2.3"
-  resolved "https://registry.yarnpkg.com/async-kit/-/async-kit-2.2.3.tgz#264751a279ddc5f59b419638b805ae2c49858fb7"
-  dependencies:
-    nextgen-events "^0.9.0"
-    tree-kit "^0.5.26"
 
 async@1.5.2:
   version "1.5.2"
@@ -896,6 +900,10 @@ chokidar@1.7.0, chokidar@^1.7.0:
   optionalDependencies:
     fsevents "^1.0.0"
 
+chroma-js@^2.1.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/chroma-js/-/chroma-js-2.4.2.tgz#dffc214ed0c11fa8eefca2c36651d8e57cbfb2b0"
+
 cipher-base@^1.0.0, cipher-base@^1.0.1, cipher-base@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/cipher-base/-/cipher-base-1.0.4.tgz#8760e4ecc272f4c363532f926d874aae2c1397de"
@@ -1410,10 +1418,6 @@ dashdash@^1.12.0:
   resolved "https://registry.yarnpkg.com/dashdash/-/dashdash-1.14.1.tgz#853cfa0f7cbe2fed5de20326b8dd581035f6e2f0"
   dependencies:
     assert-plus "^1.0.0"
-
-data-uri-to-buffer@0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/data-uri-to-buffer/-/data-uri-to-buffer-0.0.3.tgz#18ae979a6a0ca994b0625853916d2662bbae0b1a"
 
 date-now@^0.1.4:
   version "0.1.4"
@@ -2024,22 +2028,6 @@ generate-object-property@^1.1.0:
 get-caller-file@^1.0.1:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/get-caller-file/-/get-caller-file-1.0.2.tgz#f702e63127e7e231c160a80c1554acb70d5047e5"
-
-get-pixels@^3.3.0:
-  version "3.3.0"
-  resolved "https://registry.yarnpkg.com/get-pixels/-/get-pixels-3.3.0.tgz#8d9795beae18850b840f749581badc05d3e36e41"
-  dependencies:
-    data-uri-to-buffer "0.0.3"
-    jpeg-js "^0.1.1"
-    mime-types "^2.0.1"
-    ndarray "^1.0.13"
-    ndarray-pack "^1.1.1"
-    node-bitmap "0.0.1"
-    omggif "^1.0.5"
-    parse-data-uri "^0.2.0"
-    pngjs "^2.0.0"
-    request "^2.44.0"
-    through "^2.3.4"
 
 get-stdin@^4.0.1:
   version "4.0.1"
@@ -2656,13 +2644,13 @@ jimp@^0.2.27:
     tinycolor2 "^1.1.2"
     url-regex "^3.0.0"
 
-jpeg-js@^0.1.1:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/jpeg-js/-/jpeg-js-0.1.2.tgz#135b992c0575c985cfa0f494a3227ed238583ece"
-
 jpeg-js@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/jpeg-js/-/jpeg-js-0.2.0.tgz#53e448ec9d263e683266467e9442d2c5a2ef5482"
+
+jpeg-js@^0.4.4:
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/jpeg-js/-/jpeg-js-0.4.4.tgz#a9f1c6f1f9f0fa80cdb3484ed9635054d28936aa"
 
 js-base64@^2.1.8, js-base64@^2.1.9, js-base64@~2.1.8:
   version "2.1.9"
@@ -2787,6 +2775,10 @@ known-css-properties@^0.2.0:
 lazy-cache@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/lazy-cache/-/lazy-cache-1.0.4.tgz#a1d78fc3a50474cb80845d3b3b6e1da49a446e8e"
+
+lazyness@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/lazyness/-/lazyness-1.2.0.tgz#5dc0f02c37280436b21f0e4918ce6e72a109c657"
 
 lcid@^1.0.0:
   version "1.0.0"
@@ -3072,7 +3064,7 @@ mime-db@~1.27.0:
   version "1.27.0"
   resolved "https://registry.yarnpkg.com/mime-db/-/mime-db-1.27.0.tgz#820f572296bbd20ec25ed55e5b5de869e5436eb1"
 
-mime-types@^2.0.1, mime-types@^2.1.12, mime-types@~2.1.11, mime-types@~2.1.7:
+mime-types@^2.1.12, mime-types@~2.1.11, mime-types@~2.1.7:
   version "2.1.15"
   resolved "https://registry.yarnpkg.com/mime-types/-/mime-types-2.1.15.tgz#a4ebf5064094569237b8cf70046776d09fc92aed"
   dependencies:
@@ -3178,9 +3170,9 @@ ndarray-pack@^1.1.1:
     cwise-compiler "^1.1.2"
     ndarray "^1.0.13"
 
-ndarray@^1.0.13, ndarray@^1.0.18:
-  version "1.0.18"
-  resolved "https://registry.yarnpkg.com/ndarray/-/ndarray-1.0.18.tgz#b60d3a73224ec555d0faa79711e502448fd3f793"
+ndarray@^1.0.13, ndarray@^1.0.19:
+  version "1.0.19"
+  resolved "https://registry.yarnpkg.com/ndarray/-/ndarray-1.0.19.tgz#6785b5f5dfa58b83e31ae5b2a058cfd1ab3f694e"
   dependencies:
     iota-array "^1.0.0"
     is-buffer "^1.0.2"
@@ -3189,9 +3181,9 @@ negotiator@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/negotiator/-/negotiator-0.6.1.tgz#2b327184e8992101177b28563fb5e7102acd0ca9"
 
-nextgen-events@^0.9.0, nextgen-events@^0.9.9:
-  version "0.9.9"
-  resolved "https://registry.yarnpkg.com/nextgen-events/-/nextgen-events-0.9.9.tgz#39a8afc4a2b845388c57e2c6bb9716711986a3a0"
+nextgen-events@^1.5.2:
+  version "1.5.3"
+  resolved "https://registry.yarnpkg.com/nextgen-events/-/nextgen-events-1.5.3.tgz#89a657720fffbfdef646f2769ac6fcc6c4f79789"
 
 node-bitmap@0.0.1:
   version "0.0.1"
@@ -3391,9 +3383,9 @@ object.omit@^2.0.0:
     for-own "^0.1.4"
     is-extendable "^0.1.1"
 
-omggif@^1.0.5:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/omggif/-/omggif-1.0.8.tgz#178f37b2ab0b3d7b46ed3a0e46bd0790b58d3530"
+omggif@^1.0.10:
+  version "1.0.10"
+  resolved "https://registry.yarnpkg.com/omggif/-/omggif-1.0.10.tgz#ddaaf90d4a42f532e9e7cb3a95ecdd47f17c7b19"
 
 on-finished@~2.3.0:
   version "2.3.0"
@@ -3487,12 +3479,6 @@ parse-bmfont-xml@^1.1.0:
   dependencies:
     xml-parse-from-string "^1.0.0"
     xml2js "^0.4.5"
-
-parse-data-uri@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/parse-data-uri/-/parse-data-uri-0.2.0.tgz#bf04d851dd5c87b0ab238e5d01ace494b604b4c9"
-  dependencies:
-    data-uri-to-buffer "0.0.3"
 
 parse-glob@^3.0.4:
   version "3.0.4"
@@ -3623,13 +3609,13 @@ plur@^2.0.0, plur@^2.1.2:
   dependencies:
     irregular-plurals "^1.0.0"
 
-pngjs@^2.0.0:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-2.3.1.tgz#11d1e12b9cb64d63e30c143a330f4c1f567da85f"
-
 pngjs@^3.0.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-3.2.0.tgz#fc9fcea1a8a375da54a51148019d5abd41dbabde"
+
+pngjs@^6.0.0:
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/pngjs/-/pngjs-6.0.0.tgz#ca9e5d2aa48db0228a52c419c3308e87720da821"
 
 portscanner@2.1.1:
   version "2.1.1"
@@ -4587,7 +4573,7 @@ repeating@^2.0.0:
   dependencies:
     is-finite "^1.0.0"
 
-request@2, request@^2.44.0, request@^2.65.0, request@^2.79.0, request@^2.81.0:
+request@2, request@^2.65.0, request@^2.79.0, request@^2.81.0:
   version "2.81.0"
   resolved "https://registry.yarnpkg.com/request/-/request-2.81.0.tgz#c6928946a0e06c5f8d6f8a9333469ffda46298a0"
   dependencies:
@@ -4810,7 +4796,7 @@ set-immediate-shim@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/set-immediate-shim/-/set-immediate-shim-1.0.1.tgz#4b2b1b27eb808a9f8dcc481a58e5e56f599f3f61"
 
-setimmediate@^1.0.4:
+setimmediate@^1.0.4, setimmediate@^1.0.5:
   version "1.0.5"
   resolved "https://registry.yarnpkg.com/setimmediate/-/setimmediate-1.0.5.tgz#290cbb232e306942d7d7ea9b83732ab7856f8285"
 
@@ -4821,6 +4807,12 @@ setprototypeof@1.0.2:
 setprototypeof@1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/setprototypeof/-/setprototypeof-1.0.3.tgz#66567e37043eeb4f04d91bd658c0cbefb55b8e04"
+
+seventh@^0.7.40:
+  version "0.7.40"
+  resolved "https://registry.yarnpkg.com/seventh/-/seventh-0.7.40.tgz#a5a010496cb84421bb81f524840484a5aa473be9"
+  dependencies:
+    setimmediate "^1.0.5"
 
 sha.js@^2.4.0, sha.js@^2.4.8:
   version "2.4.8"
@@ -5031,12 +5023,9 @@ strict-uri-encode@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/strict-uri-encode/-/strict-uri-encode-1.1.0.tgz#279b225df1d582b1f54e65addd4352e18faa0713"
 
-string-kit@^0.5.22:
-  version "0.5.26"
-  resolved "https://registry.yarnpkg.com/string-kit/-/string-kit-0.5.26.tgz#c3dc431cad0a4451e2132c342c47611a92b1c925"
-  dependencies:
-    tree-kit "^0.5.24"
-    xregexp "^3.2.0"
+string-kit@^0.12.8:
+  version "0.12.8"
+  resolved "https://registry.yarnpkg.com/string-kit/-/string-kit-0.12.8.tgz#6b35b3d873105c4b194757ecd66b0723ffb914af"
 
 string-width@^1.0.1, string-width@^1.0.2:
   version "1.0.2"
@@ -5254,16 +5243,18 @@ tar@^2.0.0, tar@^2.2.1:
     fstream "^1.0.12"
     inherits "2"
 
-terminal-kit@^1.11.1:
-  version "1.11.1"
-  resolved "https://registry.yarnpkg.com/terminal-kit/-/terminal-kit-1.11.1.tgz#c1bc6ef521d32764ffb5b45fc7b948ca731cf203"
+terminal-kit@^2.1.8:
+  version "2.1.8"
+  resolved "https://registry.yarnpkg.com/terminal-kit/-/terminal-kit-2.1.8.tgz#d1a50613aa74ef67592e8b5accfd2e89879f7745"
   dependencies:
-    async-kit "^2.2.3"
-    get-pixels "^3.3.0"
-    ndarray "^1.0.18"
-    nextgen-events "^0.9.9"
-    string-kit "^0.5.22"
-    tree-kit "^0.5.26"
+    "@cronvel/get-pixels" "^3.4.0"
+    chroma-js "^2.1.2"
+    lazyness "^1.2.0"
+    ndarray "^1.0.19"
+    nextgen-events "^1.5.2"
+    seventh "^0.7.40"
+    string-kit "^0.12.8"
+    tree-kit "^0.7.4"
 
 text-table@^0.2.0:
   version "0.2.0"
@@ -5283,7 +5274,7 @@ through2@^0.6.1, through2@^0.6.3, through2@~0.6.1:
     readable-stream ">=1.0.33-1 <1.1.0-0"
     xtend ">=4.0.0 <4.1.0-0"
 
-"through@>=2.2.7 <3", through@^2.3.4, through@~2.3.4:
+"through@>=2.2.7 <3", through@~2.3.4:
   version "2.3.8"
   resolved "https://registry.yarnpkg.com/through/-/through-2.3.8.tgz#0dd4c9ffaabc357960b1b724115d7e0e86a2e1f5"
 
@@ -5315,9 +5306,9 @@ tough-cookie@~2.3.0:
   dependencies:
     punycode "^1.4.1"
 
-tree-kit@^0.5.24, tree-kit@^0.5.26:
-  version "0.5.26"
-  resolved "https://registry.yarnpkg.com/tree-kit/-/tree-kit-0.5.26.tgz#8571c86fa24d1db754e5b0cb3a7e09f41e74a8df"
+tree-kit@^0.7.4:
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/tree-kit/-/tree-kit-0.7.4.tgz#d6c9dba3e06188952282f196657f6bbbb454a39a"
 
 trim-newlines@^1.0.0:
   version "1.0.0"
@@ -5638,10 +5629,6 @@ xmlbuilder@^4.1.0:
 xmlhttprequest-ssl@1.5.3:
   version "1.5.3"
   resolved "https://registry.yarnpkg.com/xmlhttprequest-ssl/-/xmlhttprequest-ssl-1.5.3.tgz#185a888c04eca46c3e4070d99f7b49de3528992d"
-
-xregexp@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/xregexp/-/xregexp-3.2.0.tgz#cb3601987bfe2695b584000c18f1c4a8c322878e"
 
 "xtend@>=4.0.0 <4.1.0-0", xtend@^4.0.0:
   version "4.0.2"
